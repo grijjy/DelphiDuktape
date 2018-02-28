@@ -1,0 +1,3 @@
+FIB RCDATA "Resources\\fib.js"
+PRIME RCDATA "Resources\\prime.js"
+PROCESS RCDATA "Resources\\process.js"

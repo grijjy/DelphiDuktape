@@ -1,0 +1,1 @@
+g++ -shared -o libduktape_linux64.so -fPIC -m64 src/duktape.c

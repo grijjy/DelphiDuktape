@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B67292AC-F60C-4F3D-AC07-2FC84EA25DD3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CrossPlatform\DuktapeDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LowLevel\DuktapeLowLevel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MediumLevel\DuktapeMediumLevel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HighLevel\DuktapeHighLevel.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DuktapeDemo">
+        <MSBuild Projects="CrossPlatform\DuktapeDemo.dproj"/>
+    </Target>
+    <Target Name="DuktapeDemo:Clean">
+        <MSBuild Projects="CrossPlatform\DuktapeDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DuktapeDemo:Make">
+        <MSBuild Projects="CrossPlatform\DuktapeDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DuktapeLowLevel">
+        <MSBuild Projects="LowLevel\DuktapeLowLevel.dproj"/>
+    </Target>
+    <Target Name="DuktapeLowLevel:Clean">
+        <MSBuild Projects="LowLevel\DuktapeLowLevel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DuktapeLowLevel:Make">
+        <MSBuild Projects="LowLevel\DuktapeLowLevel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DuktapeMediumLevel">
+        <MSBuild Projects="MediumLevel\DuktapeMediumLevel.dproj"/>
+    </Target>
+    <Target Name="DuktapeMediumLevel:Clean">
+        <MSBuild Projects="MediumLevel\DuktapeMediumLevel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DuktapeMediumLevel:Make">
+        <MSBuild Projects="MediumLevel\DuktapeMediumLevel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DuktapeHighLevel">
+        <MSBuild Projects="HighLevel\DuktapeHighLevel.dproj"/>
+    </Target>
+    <Target Name="DuktapeHighLevel:Clean">
+        <MSBuild Projects="HighLevel\DuktapeHighLevel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DuktapeHighLevel:Make">
+        <MSBuild Projects="HighLevel\DuktapeHighLevel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DuktapeDemo;DuktapeLowLevel;DuktapeMediumLevel;DuktapeHighLevel"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DuktapeDemo:Clean;DuktapeLowLevel:Clean;DuktapeMediumLevel:Clean;DuktapeHighLevel:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DuktapeDemo:Make;DuktapeLowLevel:Make;DuktapeMediumLevel:Make;DuktapeHighLevel:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

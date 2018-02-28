@@ -1,0 +1,102 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Duktape Demo'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 2
+  object PanelDetails: TPanel
+    Align = Client
+    Size.Width = 390.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object ToolBarOutput: TToolBar
+      Padding.Left = 13.000000000000000000
+      Padding.Right = 15.000000000000000000
+      Size.Width = 390.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object LabelOutput: TLabel
+        Align = Contents
+        Size.Width = 390.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'toollabel'
+        TextSettings.HorzAlign = Center
+        Text = 'Output'
+      end
+      object ButtonMaster: TSpeedButton
+        Align = Left
+        Position.X = 13.000000000000000000
+        Size.Width = 44.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'detailstoolbuttonbordered'
+        Text = 'ButtonMaster'
+        TouchTargetExpansion.Left = 5.000000000000000000
+        TouchTargetExpansion.Top = 5.000000000000000000
+        TouchTargetExpansion.Right = 5.000000000000000000
+        TouchTargetExpansion.Bottom = 5.000000000000000000
+        Visible = False
+      end
+    end
+    object MemoOutput: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      StyledSettings = [Size, Style, FontColor]
+      TextSettings.Font.Family = 'Courier New'
+      TextSettings.WordWrap = True
+      Align = Client
+      Size.Width = 390.000000000000000000
+      Size.Height = 436.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 382.000000000000000000
+      Viewport.Height = 428.000000000000000000
+    end
+  end
+  object MultiView: TMultiView
+    TargetControl = PanelDetails
+    MasterButton = ButtonMaster
+    Size.Width = 250.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBarMultiView: TToolBar
+      Size.Width = 250.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object LabelMultiView: TLabel
+        Align = Client
+        Margins.Left = 10.000000000000000000
+        Size.Width = 240.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'toollabel'
+        Text = 'Demos'
+      end
+    end
+    object ListBoxDemos: TListBox
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 436.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      OnChange = ListBoxDemosChange
+      Viewport.Width = 250.000000000000000000
+      Viewport.Height = 436.000000000000000000
+    end
+  end
+end
