@@ -16,7 +16,9 @@ The build script for Windows assumes you are using Visual Studio 2015 or later. 
 * Near the top is a line that reads:
     `#undef DUK_F_DLL_BUILD`
 * Change this line to:
-`#define DUK_F_DLL_BUILD`
+  `#define DUK_F_DLL_BUILD`
+* And add below that (to address issue #1):
+  `#define DUK_USE_DATE_NOW_WINDOWS`
 * Open the "VS x86 Native Tools Command Prompt" and navigate to this directory (substitute "VS" for your Visual Studio version, eg. "VS2017").
 * Execute `BuildWin32.bat`.
 * Open the "VS x64 Native Tools Command Prompt" and navogate to this  directory. 

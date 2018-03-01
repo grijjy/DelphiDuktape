@@ -65,7 +65,9 @@
 
 /* DLL build detection */
 /* not configured for DLL build */
-#define DUK_F_DLL_BUILD
+#undef DUK_F_DLL_BUILD
+/* To avoid using GetSystemTimePreciseAsFileTime, which is not available on Windows 7 */
+#define DUK_USE_DATE_NOW_WINDOWS
 
 /* Apple OSX, iOS */
 #if defined(__APPLE__)
