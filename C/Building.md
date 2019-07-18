@@ -30,7 +30,7 @@ The build script for Windows assumes you are using Visual Studio 2015 or later. 
 * Open a command prompt.
 * Execute `BuildAndroid.bat`.
 
-## macOS
+## macOS (64-bit)
 
 * Copy this directory with subdirectories to your Mac.
 * Open a terminal.

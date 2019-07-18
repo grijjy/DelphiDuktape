@@ -1,5 +1,4 @@
-OUTPUT="../bin/libduktape_osx32.dylib"
-PLATFORM="MacOSX"
+	PLATFORM="MacOSX"
 
 DEVELOPER_DIR=`xcode-select -print-path`
 if [ ! -d $DEVELOPER_DIR ]; then
@@ -13,4 +12,6 @@ if [ ! -d $SDK_ROOT ]; then
   exit 1
 fi
 
-clang -shared -o $OUTPUT -fPIC -O3 -arch i386 -isysroot $SDK_ROOT src/duktape.c
+clang -c -fPIC -O3 -arch x86_64 -isysroot $SDK_ROOT src/duktape.c
+ar -r "../libduktape_osx64.a" duktape.o
+rm duktape.o
